@@ -1,0 +1,9 @@
+/* Reset de Eric Meyer - Limpa margens e preenchimentos padrão */
+html, body, div, span, h1, h2, p, a, img, section {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}

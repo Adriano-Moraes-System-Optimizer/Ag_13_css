@@ -1,22 +1,86 @@
-/* O "container pai" ativa e controla o alinhamento do layout */
+/* ==========================================
+   ESTRUTURA DO LAYOUT (AS COLUNAS)
+   ========================================== */
+
+/* O container principal ativa o Flexbox para alinhar as seções */
 #container-principal {
-    display: flex;            /* Ativa o modelo Flexbox */
-    flex-wrap: wrap;          /* Permite que as colunas quebrem de linha em telas pequenas (como celulares) */
-    gap: 20px;                /* Cria um espaçamento uniforme entre as colunas */
-    justify-content: center;  /* Centraliza o bloco de colunas na tela */
+    display: flex;
+    flex-wrap: wrap;       /* Permite quebrar linha APENAS se a tela for de celular */
+    gap: 25px;             /* Espaçamento uniforme entre as 3 colunas */
     width: 100%;
-    max-width: 1200px;        /* Limita a largura máxima para não espalhar demais em monitores gigantes */
-    margin: 0 auto;           /* Centraliza o site todo na tela */
+    max-width: 1200px;     /* Limita o tamanho em monitores muito grandes */
+    margin: 20px auto;     /* Centraliza o site na tela */
 }
 
-/* As "seções filhas" se adaptam dinamicamente ao espaço disponível */
+/* Cada uma das 3 seções do seu portal */
 .coluna {
-    flex: 1;                  /* Faz com que as 3 colunas dividam o espaço disponível igualmente */
-    min-width: 280px;         /* Define o tamanho mínimo seguro; menor que isso, a coluna quebra para a linha de baixo */
-    
-    /* Estilos visuais adicionais */
+    flex: 1;               /* Faz as 3 colunas dividirem o espaço igualmente (33% cada) */
+    min-width: 250px;      /* Limite mínimo seguro para telas pequenas */
     background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   ELEMENTOS INTERNOS (IMAGENS E TEXTOS)
+   ========================================== */
+
+/* A imagem agora se ajusta perfeitamente ao tamanho da coluna */
+.img-portal {
+    width: 100%;           /* Ocupa toda a largura interna da sua coluna */
+    height: auto;          /* A altura se ajusta sozinha sem cortar nem distorcer a foto */
+    display: block;        /* Remove espaçamentos invisíveis do HTML */
+    border-radius: 6px;
+    margin-bottom: 15px;   /* Empurra o parágrafo para baixo */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+}
+
+/* Estilo rápido para os títulos das seções */
+.coluna h2 {
+    color: #444;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+/* Estilo para os parágrafos */
+.coluna p {
+    color: #666;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+/* ==========================================
+   CORES PERSONALIZADAS PARA OS TÍTULOS (IDs)
+   ========================================== */
+
+/* Vermelho vibrante para Filmes (estilo cinema/streaming) */
+#filmes h2 {
+    color: #e50914;
+    font-weight: bold;
+}
+
+/* Verde para Música (estilo Spotify) */
+#musica h2 {
+    color: #1db954;
+    font-weight: bold;
+}
+
+/* Roxo para Games e Tecnologia (estilo Twitch/Geek) */
+#games h2 {
+    color: #673ab7;
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   AJUSTE DA LEGENDA (PARÁGRAFO)
+   ========================================== */
+
+.coluna p {
+    color: #222;            /* Um tom mais escuro para dar melhor leitura */
+    font-weight: bold;      /* Texto em negrito, como você pediu */
+    font-size: 1.1rem;      /* Aumentou de 0.95rem para 1.1rem */
+    line-height: 1.6;       /* Espaçamento entre linhas para não sufocar o texto grande */
+    margin-top: 15px;       /* Afasta um pouco o texto da imagem acima */
 }

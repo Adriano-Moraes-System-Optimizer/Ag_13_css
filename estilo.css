@@ -1,11 +1,22 @@
-.img-portal {
-    width: 100%;          /* A imagem vai ocupar no máximo a largura da coluna onde ela está */
-    max-width: 500px;     /* Garante que se a tela for gigante, ela não passe de 500px */
-    height: 250px;        /* Mantém uma altura fixa proporcional */
-    object-fit: cover;    /* Mantém o corte perfeito */
-    border-radius: 8px;   
-    margin-bottom: 15px;  /* Melhor usar margem inferior para desgrudar da imagem de baixo */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    display: block;       /* Ajuda a alinhar melhor elementos que estão dentro de links */
+/* O "container pai" ativa e controla o alinhamento do layout */
+#container-principal {
+    display: flex;            /* Ativa o modelo Flexbox */
+    flex-wrap: wrap;          /* Permite que as colunas quebrem de linha em telas pequenas (como celulares) */
+    gap: 20px;                /* Cria um espaçamento uniforme entre as colunas */
+    justify-content: center;  /* Centraliza o bloco de colunas na tela */
+    width: 100%;
+    max-width: 1200px;        /* Limita a largura máxima para não espalhar demais em monitores gigantes */
+    margin: 0 auto;           /* Centraliza o site todo na tela */
 }
 
+/* As "seções filhas" se adaptam dinamicamente ao espaço disponível */
+.coluna {
+    flex: 1;                  /* Faz com que as 3 colunas dividam o espaço disponível igualmente */
+    min-width: 280px;         /* Define o tamanho mínimo seguro; menor que isso, a coluna quebra para a linha de baixo */
+    
+    /* Estilos visuais adicionais */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}

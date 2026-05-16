@@ -1,8 +1,11 @@
 .img-portal {
-    width: 500px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin: 10px;
+    width: 100%;          /* A imagem vai ocupar no máximo a largura da coluna onde ela está */
+    max-width: 500px;     /* Garante que se a tela for gigante, ela não passe de 500px */
+    height: 250px;        /* Mantém uma altura fixa proporcional */
+    object-fit: cover;    /* Mantém o corte perfeito */
+    border-radius: 8px;   
+    margin-bottom: 15px;  /* Melhor usar margem inferior para desgrudar da imagem de baixo */
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: block;       /* Ajuda a alinhar melhor elementos que estão dentro de links */
 }
+
